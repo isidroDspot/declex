@@ -151,6 +151,7 @@
                             <sources>
                                 <source>${project.parent.basedir}/Dependencies/androidannotations/AndroidAnnotations/androidannotations-core/androidannotations/src/main/java</source>
                                 <source>${project.parent.basedir}/Dependencies/evo-inflector/src/main/java</source>
+                                <source>${project.parent.basedir}/Dependencies/android-saripaar/saripaar/src/main/java</source>
                             </sources>
                         </configuration>
                     </execution>
