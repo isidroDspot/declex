@@ -120,24 +120,7 @@
 
 		<plugins>
 
-			<!-- This is only to develop faster with Android Studio-->
-			<plugin>
-                <groupId>org.codehaus.mojo</groupId>
-	            <artifactId>exec-maven-plugin</artifactId>
-	            <executions>
-	                <execution>
-	                    <id>Remove java.exe</id>
-	                    <phase>install</phase>
-	                    <goals>
-	                        <goal>exec</goal>
-	                    </goals>
-	                    <configuration>
-	                        <executable>${project.parent.basedir}/run.bat</executable>
-	                    </configuration>
-	                </execution>
-	            </executions>
-	        </plugin>
-
+			
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>build-helper-maven-plugin</artifactId>
