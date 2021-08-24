@@ -121,6 +121,7 @@ public class EActivityHolder extends EComponentWithViewSupportHolder
 		setSetContentView();
 		intentBuilder = new ActivityIntentBuilder(this, androidManifest);
 		intentBuilder.build();
+		implementBeanHolder();
 	}
 
 	@Override
@@ -157,8 +158,8 @@ public class EActivityHolder extends EComponentWithViewSupportHolder
 		JVar onCreateSavedInstanceState = onCreateMethod.param(bundleClass, "savedInstanceState");
 		JBlock onCreateBody = onCreateMethod.body();
 		JVar previousNotifier = viewNotifierHelper.replacePreviousNotifier(onCreateBody);
-		onCreateBody.add(JExpr.invoke(getInit()).arg(onCreateSavedInstanceState));
 		onCreateBody.add(_super().invoke(onCreateMethod).arg(onCreateSavedInstanceState));
+		onCreateBody.add(JExpr.invoke(getInit()).arg(onCreateSavedInstanceState));
 		viewNotifierHelper.resetPreviousNotifier(onCreateBody, previousNotifier);
 	}
 

@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2016-2019 the AndroidAnnotations project
+ * Copyright (C) 2016-2020 the AndroidAnnotations project
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -15,11 +15,18 @@
  */
 package org.androidannotations.test.ebean;
 
+import org.androidannotations.annotations.Bean;
 import org.androidannotations.annotations.EFragment;
 
 import android.app.Fragment;
 
 @EFragment
 public class DifferentFragment extends Fragment {
+
+	@Bean
+	ActivityScopedBean activityScopedBean;
+
+	@Bean
+	FragmentScopedBean fragmentScopedBean;
 
 }

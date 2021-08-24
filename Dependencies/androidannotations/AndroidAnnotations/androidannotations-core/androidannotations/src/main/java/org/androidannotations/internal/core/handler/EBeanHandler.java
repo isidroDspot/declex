@@ -83,11 +83,11 @@ public class EBeanHandler extends BaseGeneratingAnnotationHandler<EBeanHolder> {
 
 		EBean eBeanAnnotation = adiHelper.getAnnotation(element, EBean.class);
 		EBean.Scope eBeanScope = eBeanAnnotation.scope();
-		boolean hasSingletonScope = eBeanScope == EBean.Scope.Singleton;
+		boolean hasDefaultScope = eBeanScope == EBean.Scope.Default;
 
-		holder.createFactoryMethod(hasSingletonScope);
+		holder.createFactoryMethod(eBeanScope);
 
-		if (!hasSingletonScope) {
+		if (hasDefaultScope) {
 			holder.invokeInitInConstructors();
 			holder.createRebindMethod();
 		}

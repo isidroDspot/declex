@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2016-2019 the AndroidAnnotations project
+ * Copyright (C) 2016-2020 the AndroidAnnotations project
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -31,5 +31,14 @@ public class CustomFragment extends Fragment {
 
 	@Bean
 	SomeBeanWithRootFragmentWithDifferentFragment someBeanWithDifferentFragment;
+
+	@Bean
+	ActivityScopedBean activityScopedBean;
+
+	@Bean
+	FragmentScopedBean fragmentScopedBean1;
+
+	@Bean
+	FragmentScopedBean fragmentScopedBean2;
 
 }

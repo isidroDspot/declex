@@ -1,6 +1,6 @@
 /**
  * Copyright (C) 2010-2016 eBusiness Information, Excilys Group
- * Copyright (C) 2016-2019 the AndroidAnnotations project
+ * Copyright (C) 2016-2020 the AndroidAnnotations project
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -213,10 +213,10 @@ public class RoboGuiceHandler extends BaseAnnotationHandler<EActivityHolder> {
 
 		JSynchronizedBlock synchronizedBlock = onContentChangedAfterSuperBlock.synchronizedBlock(getJClass(RoboGuiceClasses.CONTEXT_SCOPE).dotclass());
 		JBlock synchronizedBlockBody = synchronizedBlock.body();
-		synchronizedBlockBody.add(scope.invoke("enter").argThis());
+		synchronizedBlockBody.invoke(scope, "enter").arg(_this());
 		JTryBlock tryBlock = synchronizedBlockBody._try();
-		tryBlock.body().add(getJClass(RoboGuiceHelper.class).staticInvoke("callInjectViews").argThis());
-		tryBlock._finally().add(scope.invoke("exit").argThis());
+		tryBlock.body().staticInvoke(getJClass(RoboGuiceHelper.class), "callInjectViews").arg(_this());
+		tryBlock._finally().invoke(scope, "exit").arg(_this());
 		onContentChangedAfterSuperBlock.add(synchronizedBlock);
 
 		fireEvent(eventManager, onContentChangedAfterSuperBlock, getJClass(RoboGuiceClasses.ON_CONTENT_CHANGED_EVENT));
@@ -242,7 +242,7 @@ public class RoboGuiceHandler extends BaseAnnotationHandler<EActivityHolder> {
 		for (IJExpression eventArgument : eventArguments) {
 			newEvent.arg(eventArgument);
 		}
-		body.add(eventManager.invoke("fire").arg(newEvent));
+		body.invoke(eventManager, "fire").arg(newEvent);
 	}
 
 	private void getScopedObjectMap(EActivityHolder holder, JFieldVar scopedObjectMap) {

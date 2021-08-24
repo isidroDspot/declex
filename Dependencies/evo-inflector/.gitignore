@@ -1,8 +1,0 @@
-target/
-bin/
-.settings/
-.direct_classpath
-.classpath
-.project
-.config/
-src/test/resources/enwiktionary-latest-pages-articles.xml.bz2

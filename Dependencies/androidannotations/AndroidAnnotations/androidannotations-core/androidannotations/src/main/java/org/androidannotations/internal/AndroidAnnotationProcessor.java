@@ -199,6 +199,7 @@ public class AndroidAnnotationProcessor extends AbstractProcessor {
 			androidAnnotationsEnv.setAndroidEnvironment(rClass, androidManifest);
 
 		} catch (Exception e) {
+			e.printStackTrace();
 			return;
 		}
 

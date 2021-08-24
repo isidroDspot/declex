@@ -1,6 +1,6 @@
 /**
  * Copyright (C) 2010-2016 eBusiness Information, Excilys Group
- * Copyright (C) 2016-2019 the AndroidAnnotations project
+ * Copyright (C) 2016-2020 the AndroidAnnotations project
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -131,12 +131,12 @@ public class RestAnnotationHelper extends TargetAnnotationHelper {
 				String elementName = urlNameToElementName.get(urlVariable);
 				if (elementName != null) {
 					JVar methodParam = methodParams.get(elementName);
-					methodBody.add(hashMapVar.invoke("put").arg(urlVariable).arg(methodParam));
+					methodBody.invoke(hashMapVar, "put").arg(urlVariable).arg(methodParam);
 					methodParams.remove(elementName);
 				} else {
 					// cookie from url
 					JInvocation cookieValue = holder.getAvailableCookiesField().invoke("get").arg(JExpr.lit(urlVariable));
-					methodBody.add(hashMapVar.invoke("put").arg(urlVariable).arg(cookieValue));
+					methodBody.invoke(hashMapVar, "put").arg(urlVariable).arg(cookieValue);
 				}
 			}
 			return hashMapVar;
