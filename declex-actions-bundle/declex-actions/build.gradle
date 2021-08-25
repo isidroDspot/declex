@@ -1,7 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'maven'
 
-def DECLEX_VERSION = '2.0.a.35'
+def DECLEX_VERSION = '2.0.a.37'
 
 android {
     compileSdkVersion 27
