@@ -119,7 +119,7 @@
                             <sources>
                                 <source>${project.parent.basedir}/Dependencies/ActiveAndroid/src</source>
                                 <source>${project.parent.basedir}/Dependencies/androidannotations/AndroidAnnotations/androidannotations-core/androidannotations-api/src/main/java</source>
-                                <source>${project.parent.basedir}/Dependencies/saripaar/saripaar/src/main/java</source>
+                                <source>${project.parent.basedir}/Dependencies/android-saripaar/saripaar/src/main/java</source>
                             </sources>
                         </configuration>
                     </execution>
